@@ -44,7 +44,7 @@ const ProductCard: React.FC<ProductCard> = ({
       {/* Image & actions */}
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image 
-          src={data.url} 
+          src={data?.url} 
           alt="" 
           fill
           className="aspect-square object-cover rounded-md"
