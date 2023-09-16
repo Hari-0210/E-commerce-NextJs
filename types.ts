@@ -6,6 +6,7 @@ export interface Product {
   isFeatured: boolean;
   size: Size;
   color: Color;
+  url: string;
   images: Image[]
 };
 

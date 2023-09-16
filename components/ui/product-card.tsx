@@ -12,18 +12,19 @@ import useCart from "@/hooks/use-cart";
 import { Product } from "@/types";
 
 interface ProductCard {
-  data: Product
+  data: Product,
+  storeName: string
 }
 
 const ProductCard: React.FC<ProductCard> = ({
-  data
+  data, storeName
 }) => {
   const previewModal = usePreviewModal();
   const cart = useCart();
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(`/product/${data?.id}`);
+    router.push(`${storeName}/product/${data?.id}`);
   };
 
   const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {
@@ -43,7 +44,7 @@ const ProductCard: React.FC<ProductCard> = ({
       {/* Image & actions */}
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image 
-          src={data.images?.[0]?.url} 
+          src={data.url} 
           alt="" 
           fill
           className="aspect-square object-cover rounded-md"
@@ -64,7 +65,7 @@ const ProductCard: React.FC<ProductCard> = ({
       {/* Description */}
       <div>
         <p className="font-semibold text-lg">{data.name}</p>
-        <p className="text-sm text-gray-500">{data.category?.name}</p>
+        {/* <p className="text-sm text-gray-500">{data.category?.name}</p> */}
       </div>
       {/* Price & Reiew */}
       <div className="flex items-center justify-between">

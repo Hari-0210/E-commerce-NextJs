@@ -2,7 +2,7 @@ import { get } from "@/lib/httpUtility";
 
 const URL = `product/fetch`;
 
-const getProduct = async (store: any): Promise<any> => {
+const getSingleProduct = async (store: any): Promise<any> => {
   try {    
     const res: any = await get<Response>(`${URL}`, {
       headers: {
@@ -16,4 +16,4 @@ const getProduct = async (store: any): Promise<any> => {
   }
 };
 
-export default getProduct;
+export default getSingleProduct;
