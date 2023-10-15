@@ -1,6 +1,6 @@
 import { get } from "@/lib/httpUtility";
 
-const URL = `product/fetch`;
+const URL = `store/product/fetch`;
 
 const getProduct = async (store: any): Promise<any> => {
   try {    

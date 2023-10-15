@@ -12,7 +12,7 @@ import useCart from "@/hooks/use-cart";
 import { Product } from "@/types";
 
 interface ProductCard {
-  data: Product,
+  data: any,
   storeName: string
 }
 
@@ -69,7 +69,7 @@ const ProductCard: React.FC<ProductCard> = ({
       </div>
       {/* Price & Reiew */}
       <div className="flex items-center justify-between">
-        <Currency value={data?.price} />
+        <Currency value={data?.selling_price} />
       </div>
     </div>
   );

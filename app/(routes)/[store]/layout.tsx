@@ -12,10 +12,10 @@ export const metadata = {
 }
 
 export default async function StoreLayout({children, params}: any) {
-    const isStore = await storeCheck(params.store);    
-    if (isStore === false) {
-        return null
-    }
+    // const isStore = await storeCheck(params.store);    
+    // if (isStore === false) {
+    //     return null
+    // }
     
     return (
       <div className={font.className}>
